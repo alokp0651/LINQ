@@ -32,15 +32,43 @@ namespace LINQ
                 Console.Write("{0}\t", EvenNumber[i].ToString());
             }
             Console.ReadLine();
+
+
+
+
+
+           
         }
-        
+        /// <summary>
+        /// Diffrence between first and firstorDefaultS
+        /// </summary>
+        public static void FirstAndFirstorDefault() 
+        {
+            List<int> ListDontHaveEvenNo = new List<int>() { 1, 3, 5, 7, 9 };
+
+           // int firstEvenNumber = ListDontHaveEvenNo.First(x => x % 2 == 0); // <<<<<<<<<----- it will throw exception 
+
+            int firstDefaultNumber = ListDontHaveEvenNo.FirstOrDefault(x => x % 2 == 0);// <----it will return 0 as default number
+
+            //Console.WriteLine(firstEvenNumber);
+            Console.WriteLine(firstDefaultNumber);
+
+
+
+
+        }
+
         static void Main(string[] args)
         {
             
          Program program = new Program();
-         GetEvenNumber();
-            
-            
+            // GetEvenNumber();
+
+            FirstAndFirstorDefault();
+
+
+
+
         }
     }
 }
